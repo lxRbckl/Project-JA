@@ -1,2 +1,2 @@
-## [`Project JA 1`](http://lxrbckl.com/Project-JA-1)
-> Send and receive messages through an inbox, play with the magic conch shell, and get decisions made for you with a Discord bot. Spring 2022.
+## [`Project JA 2`](http://lxrbckl.com/Project-JA-2)
+> Play with the magic conch shell, have weekly discussion questions, and get decisions made for you with a Discord bot. Spring 2023.
