@@ -1,2 +1,2 @@
-## [`Project JA 2`](http://lxrbckl.com/Project-JA-2)
+### `Project JA 2`
 > Interact with the mystical conch shell, engage in weekly conversation prompts, and delegate decision-making. Spring 2023.
