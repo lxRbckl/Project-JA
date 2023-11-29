@@ -1,7 +1,7 @@
 {
   "name": "project-ja",
   "version": "1.0.0",
-  "description": "> Interact with the mystical conch shell, engage in weekly conversation prompts, and delegate decision-making. Spring 2023.",
+  "description": "> ... Fall 2023.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "openai": "^4.19.0"
+    "lxrbckl": "^5.0.4",
+    "openai": "^4.20.0"
   }
 }
