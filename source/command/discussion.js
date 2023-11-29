@@ -31,7 +31,7 @@ class discussion {
    async run(input) {
 
       const query = input.query ? input.query : discussion.query;
-      const response = await input.gpt.message(query);
+      const response = await input.gpt.message({content : query});
 
       return response;
 
