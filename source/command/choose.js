@@ -33,7 +33,6 @@ class choose {
       const options = (input.choices).split(choose.delimeters);
       const index = Math.floor((Math.random() * 100) % options.length);
 
-      console.log('options', options); // remove
       return options[index];
 
    }

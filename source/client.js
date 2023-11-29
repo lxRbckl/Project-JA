@@ -87,6 +87,8 @@ class client {
 
       this.client.on('interactionCreate', async (interaction) => {
 
+         // get response <
+         // send response <
          const response = await {
 
             'conch' : this.conch.run,
@@ -101,8 +103,9 @@ class client {
             question : interaction.options.getString('question')
 
          });
+         interaction.reply({ephemeral : true, content : response});
 
-         interaction.reply(response);
+         // >
          
       });
 
