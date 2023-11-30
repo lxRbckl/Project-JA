@@ -1,29 +1,34 @@
 class conch {
 
-   static choices = [
+   constructor() {
 
-      "It is certain.",
-      "It is decidedly so.",
-      "Without a doubt.",
-      "Yes -definitely.",
-      "You may rely on it.",
-      "As I see it, yes.",
-      "Most likely.",
-      "Outlook good.",
-      "Yes.",
-      "Signs point to yes.",
-      "Reply hazy, try again.",
-      "Ask again later.",
-      "Better not tell you now.",
-      "Cannot predict now.",
-      "Concentrate and ask again.",
-      "Don't count on it.",
-      "My reply is no.",
-      "My sources say no.",
-      "Outlook not so good.",
-      "Very doubtful."
+      this.parameter = 'question';
+      this.choices = [
 
-   ];
+         "It is certain.",
+         "It is decidedly so.",
+         "Without a doubt.",
+         "Yes -definitely.",
+         "You may rely on it.",
+         "As I see it, yes.",
+         "Most likely.",
+         "Outlook good.",
+         "Yes.",
+         "Signs point to yes.",
+         "Reply hazy, try again.",
+         "Ask again later.",
+         "Better not tell you now.",
+         "Cannot predict now.",
+         "Concentrate and ask again.",
+         "Don't count on it.",
+         "My reply is no.",
+         "My sources say no.",
+         "Outlook not so good.",
+         "Very doubtful."
+
+      ];
+
+   }
    
 
    body() {
@@ -39,21 +44,21 @@ class conch {
 
                type : 3,
                required : true,
-               name : 'question',
+               name : this.parameter,
                description : 'what to ask'
 
             }
 
          ]
 
-      }
+      };
 
    }
 
 
-   run(input) {
+   run() {
 
-      const size = (conch.choices).length;
+      const size = (this.choices).length;
       const index = Math.floor((Math.random() * 100) % size);
 
       return conch.choices[index];

@@ -18,5 +18,6 @@ const {client} = require('./source/client.js');
 
    obj.run();
    obj.listen();
+   obj.schedule();
 
 })();

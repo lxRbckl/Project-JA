@@ -1,6 +1,11 @@
 class choose {
 
-   static delimeters = /[,.-;/]/;
+   constructor() {
+
+      this.parameter = 'choices';
+      this.delimeters = /[,.-;/]/;
+
+   }
 
 
    body() {
@@ -16,21 +21,21 @@ class choose {
 
                type : 3,
                required : true,
-               name : 'choices',
-               description : `delimeters ${choose.delimeters}`
+               name : this.parameter,
+               description : `delimeters ${this.delimeters}`
 
             }
 
          ]
 
-      }
+      };
 
    }
 
 
-   run(input) {
+   run(choices) {
 
-      const options = (input.choices).split(choose.delimeters);
+      const options = (choices).split(this.delimeters);
       const index = Math.floor((Math.random() * 100) % options.length);
 
       return options[index];

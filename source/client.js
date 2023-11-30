@@ -1,5 +1,6 @@
 // import <
 const {gpt} = require('lxrbckl');
+const cron = require('node-cron');
 const {
 
    Routes,
@@ -23,19 +24,23 @@ class client {
       discordToken,
 
       guildId = '974210528958369863',
+      channelId = '1061387142082863104',
       applicationId = '970221184065081374'
 
    ) {
 
+      // variables <
       this.guildId = guildId;
+      this.channelId = channelId;
       this.openaiToken = openaiToken;
       this.discordToken = discordToken;
       this.applicationId = applicationId;
 
-      // openai <
-      // discord <
-      // commands <
+      // >
+
+      // objects <
       this.gpt = new gpt(this.openaiToken);
+      this.discussion = new discussion({gpt : this.gpt});
       this.client = new Client({
 
          rest : {version : '10'},
@@ -49,9 +54,16 @@ class client {
          ]
 
       });
-      this.conch = new conch();
-      this.choose = new choose();
-      this.discussion = new discussion();
+
+      // >
+
+      // commands <
+      this.commands = {
+
+         'conch' : new conch(),
+         'choose' : new choose()
+
+      };
 
       // >
 
@@ -60,7 +72,6 @@ class client {
 
    run() {
       
-      this.client.applic
       this.client.login(this.discordToken);
       this.client.rest.put(
 
@@ -70,13 +81,7 @@ class client {
             this.guildId
 
          ),
-         {body : [
-            
-            this.conch.body(),
-            this.choose.body(),
-            this.discussion.body()
-      
-         ]}
+         {body : Object.values(this.commands).map((i) => {return i.body();})}
 
       );
    
@@ -87,28 +92,36 @@ class client {
 
       this.client.on('interactionCreate', async (interaction) => {
 
-         // get response <
-         // send response <
-         const response = await {
+         let command = this.commands[interaction.commandName];
+         let parameter = interaction.options.getString(command.parameter);
 
-            'conch' : this.conch.run,
-            'choose' : this.choose.run,
-            'discussion' : this.discussion.run
-
-         }[interaction.commandName]({
-
-            gpt : this.gpt,
-            query : interaction.options.getString('query'),
-            choices : interaction.options.getString('choices'),
-            question : interaction.options.getString('question')
-
-         });
-         interaction.reply({ephemeral : true, content : response});
-
-         // >
+         await interaction.reply({ephemeral : true, content : command.run(parameter)});
          
       });
 
+   }
+
+
+   schedule() {
+
+      this.client.on('ready', async () => {
+
+         const channel = this.client.channels.cache.get(this.channelId);
+
+         console.log('channel', channel); // remove
+         channel.send('ok');
+
+         // cron.schedule('0 * * * *', async () => {
+
+         //    const response = this.discussion.run();
+         //    const channel = this.client.channels.cache.get(this.channelId);
+
+         //    console.log('channel', channel); // remove
+
+         // });
+
+      });
+      
    }
    
 }
