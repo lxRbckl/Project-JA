@@ -1,14 +1,20 @@
+// import <
+const {gpt} = require('lxrbckl');
+
+// >
+
+
 class discussion {
 
-   constructor(gpt) {
+   constructor(openaiToken) {
 
-      this.gpt = gpt;
+      this.gpt = new gpt({token : openaiToken});
       this.query = 'Ask me a very interesting question.';
 
    }
 
 
-   async run() {return await this.gpt.message({content : this.query});}
+   async run() {return await this.gpt.message({query : this.query});}
 
 }
 

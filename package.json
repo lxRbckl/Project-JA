@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "lxrbckl": "^5.0.4",
+    "lxrbckl": "^5.0.5",
     "node-cron": "^3.0.3",
     "openai": "^4.20.1"
   }

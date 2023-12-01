@@ -1,5 +1,4 @@
 // import <
-const {gpt} = require('lxrbckl');
 const cron = require('node-cron');
 const {
 
@@ -39,8 +38,7 @@ class client {
       // >
 
       // objects <
-      this.gpt = new gpt(this.openaiToken);
-      this.discussion = new discussion({gpt : this.gpt});
+      this.discussion = new discussion(this.openaiToken);
       this.client = new Client({
 
          rest : {version : '10'},
@@ -106,19 +104,14 @@ class client {
 
       this.client.on('ready', async () => {
 
-         const channel = this.client.channels.cache.get(this.channelId);
+         cron.schedule('0 * * * *', async () => {
 
-         console.log('channel', channel); // remove
-         channel.send('ok');
+            let response = await this.discussion.run();
+            let channel = this.client.channels.cache.get(this.channelId);
 
-         // cron.schedule('0 * * * *', async () => {
+            await channel.send(response);
 
-         //    const response = this.discussion.run();
-         //    const channel = this.client.channels.cache.get(this.channelId);
-
-         //    console.log('channel', channel); // remove
-
-         // });
+         });
 
       });
       
