@@ -10,8 +10,8 @@ const {client} = require('./source/client.js');
 // objects <
 const token = {
 
-   openai : 'fish',
-   discord : 'tacos'
+   openai : undefined,
+   discord : undefined
 
 };
 
