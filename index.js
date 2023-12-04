@@ -7,12 +7,23 @@ const {client} = require('./source/client.js');
 // >
 
 
+// objects <
+const token = {
+
+   openai : 'fish',
+   discord : 'tacos'
+
+};
+
+// >
+
+
 (async () => {
 
    let obj = new client(
 
-      openaiToken = '',
-      discordToken = ''
+      openaiToken = token.openai,
+      discordToken = token.discord
 
    );
 
@@ -21,3 +32,9 @@ const {client} = require('./source/client.js');
    obj.schedule();
 
 })();
+
+
+// export <
+module.exports = {token};
+
+// >
