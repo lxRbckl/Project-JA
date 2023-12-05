@@ -25,11 +25,7 @@ const token = {
       openaiToken = token.openai,
       discordToken = token.discord
 
-   );
-
-   obj.run();
-   obj.listen();
-   obj.schedule();
+   ).run();
 
 })();
 

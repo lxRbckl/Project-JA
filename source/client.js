@@ -70,6 +70,8 @@ class client {
 
    run() {
       
+      // register slash commands <
+      // activate interactions, schedule <
       this.client.login(this.discordToken);
       this.client.rest.put(
 
@@ -82,6 +84,11 @@ class client {
          {body : Object.values(this.commands).map((i) => {return i.body();})}
 
       );
+
+      this.listen();
+      this.schedule();
+
+      // >
    
    }
 
