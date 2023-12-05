@@ -37,6 +37,16 @@ class client {
 
       // >
 
+      // commands <
+      this.commands = {
+
+         'conch' : new conch(),
+         'choose' : new choose()
+
+      };
+
+      // >
+
       // objects <
       this.discussion = new discussion(this.openaiToken);
       this.client = new Client({
@@ -52,16 +62,6 @@ class client {
          ]
 
       });
-
-      // >
-
-      // commands <
-      this.commands = {
-
-         'conch' : new conch(),
-         'choose' : new choose()
-
-      };
 
       // >
 
