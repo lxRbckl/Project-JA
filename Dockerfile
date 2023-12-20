@@ -3,8 +3,8 @@ FROM node:18
 
 ENV repolink "https://github.com/lxRbckl/Project-JA.git"
 
-ENV tokenopenai undefined
-ENV tokendiscord undefined
+ENV tokenopenai ${tokenopenai}
+ENV tokendiscord ${tokendiscord}
 
 
 WORKDIR /usr/src/app
