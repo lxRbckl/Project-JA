@@ -20,4 +20,4 @@ jobs:
 
       - name: Login to Docker Registry
         run: |
-          echo ${{ secrets.DOCKERPASSWORD }} | docker login https://hub.docker.com --username ${{ secrets.DOCKERUSERNAME }} --password-stdin
+         docker login https://hub.docker.com --username ${{ secrets.DOCKERUSERNAME }} --password ${{ secrets.DOCKERPASSWORD }}
