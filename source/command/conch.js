@@ -61,7 +61,7 @@ class conch {
       const size = (this.choices).length;
       const index = Math.floor((Math.random() * 100) % size);
 
-      return conch.choices[index];
+      return this.choices[index]
 
    }
 
@@ -72,3 +72,5 @@ class conch {
 module.exports = {conch}
 
 // >
+
+
