@@ -27,6 +27,8 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
+            docker build -t ja .
+            
             docker images
 
       # - name: Build and Push Docker Image
