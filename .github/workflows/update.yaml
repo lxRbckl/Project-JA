@@ -21,7 +21,7 @@ jobs:
       - name: Login to Docker Registry
         uses: docker/login-action@v1
         with:
-          registry: https://hub.docker.com
+          registry: https://docker.io
           username: ${{ secrets.DOCKERHUBUSERNAME }}
           password: ${{ secrets.DOCKERHUBPASSWORD }}
 
