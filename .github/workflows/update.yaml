@@ -25,6 +25,10 @@ jobs:
           username: ${{ secrets.DOCKERHUBUSERNAME }}
           password: ${{ secrets.DOCKERHUBPASSWORD }}
 
+      - name: Build and Push Docker Image
+        run: |
+            docker images
+
       # - name: Build and Push Docker Image
       #   run: |
         
