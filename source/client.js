@@ -68,31 +68,6 @@ class client {
    }
 
 
-   run() {
-      
-      // register slash commands <
-      // activate interactions, schedule <
-      this.client.login(this.discordToken);
-      this.client.rest.put(
-
-         Routes.applicationGuildCommands(
-
-            this.applicationId,
-            this.guildId
-
-         ),
-         {body : Object.values(this.commands).map((i) => {return i.body();})}
-
-      );
-
-      this.listen();
-      this.schedule();
-
-      // >
-   
-   }
-
-
    listen() {
 
       this.client.on('interactionCreate', async (interaction) => {
@@ -122,6 +97,31 @@ class client {
 
       });
       
+   }
+
+
+   run() {
+      
+      // register slash commands <
+      // activate interactions, schedule <
+      this.client.login(this.discordToken);
+      this.client.rest.put(
+
+         Routes.applicationGuildCommands(
+
+            this.applicationId,
+            this.guildId
+
+         ),
+         {body : Object.values(this.commands).map((i) => {return i.context();})}
+
+      );
+
+      this.listen();
+      this.schedule();
+
+      // >
+   
    }
    
 }
