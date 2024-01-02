@@ -12,7 +12,7 @@ for (const [i, j] of Object.entries(token)) {
 
       // notify <
       // failure <
-      console.log('Token', i, 'exists.');
+      console.log(i, 'token exists.');
       process.exit(1);
 
       // >

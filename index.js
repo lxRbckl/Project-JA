@@ -20,7 +20,7 @@ const token = {
 
 (async () => {
 
-   let obj = new client(
+   new client(
 
       openaiToken = token.openai,
       discordToken = token.discord
