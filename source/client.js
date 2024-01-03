@@ -28,26 +28,13 @@ class client {
 
    ) {
 
-      // variables <
+      // setup <
       this.guildId = guildId;
       this.channelId = channelId;
       this.openaiToken = openaiToken;
       this.discordToken = discordToken;
       this.applicationId = applicationId;
 
-      // >
-
-      // commands <
-      this.commands = {
-
-         'conch' : new conch(),
-         'choose' : new choose()
-
-      };
-
-      // >
-
-      // objects <
       this.discussion = new discussion(this.openaiToken);
       this.client = new Client({
 
@@ -62,6 +49,16 @@ class client {
          ]
 
       });
+
+      // >
+
+      // commands <
+      this.commands = {
+
+         'conch' : new conch(),
+         'choose' : new choose()
+
+      };
 
       // >
 
