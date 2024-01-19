@@ -1,7 +1,7 @@
 FROM node:18
 
 
-ENV repolink "https://github.com/lxRbckl/Project-JA.git"
+ENV repository "https://github.com/lxRbckl/Project-JA.git"
 
 ENV tokenopenai ${tokenopenai}
 ENV tokendiscord ${tokendiscord}
@@ -15,7 +15,7 @@ RUN apt-get install -y git
 
 RUN npm install
 
-RUN git clone ${repolink}
+RUN git clone ${repository}
 RUN cd Project-JA
 
 
