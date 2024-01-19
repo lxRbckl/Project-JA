@@ -28,5 +28,5 @@ jobs:
         run: |
             docker build -t ${{ env.DOCKERPROJECT }} .
 
-            docker tag ja:latest ${{ secrets.DOCKERHUBUSERNAME }}/${{ env.DOCKERPROJECT }}:latest
+            docker tag ${{ env.DOCKERPROJECT }} ${{ secrets.DOCKERHUBUSERNAME }}/${{ env.DOCKERPROJECT }}:latest
             docker push ${{ secrets.DOCKERHUBUSERNAME }}/${{ env.DOCKERPROJECT }}:latest
