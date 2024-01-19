@@ -1,10 +1,11 @@
 FROM node:18
 
 
-ENV repository "https://github.com/lxRbckl/Project-JA.git"
-
+# referencing kubernetes environment #
 ENV tokenopenai ${tokenopenai}
 ENV tokendiscord ${tokendiscord}
+
+ENV repository "https://github.com/lxRbckl/Project-JA.git"
 
 
 WORKDIR /usr/src/app
