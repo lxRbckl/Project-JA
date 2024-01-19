@@ -14,10 +14,9 @@ COPY . .
 
 RUN apt-get install -y git
 
-RUN npm install
-
 RUN git clone ${repository}
 RUN cd Project-JA
+RUN npm install
 
 
 CMD ["node", "index.js"]
