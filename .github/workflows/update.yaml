@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
 
-      DOCKERPROJECT: "project-ja"
+      project: "project-ja"
       architecture: "linux/arm64"
 
     steps:
@@ -51,4 +51,4 @@ jobs:
           context: .
           platforms: ${{ env.architecture }}
           push: true
-          tags: user/app:latest
+          tags: ${{ secrets.DOCKERHUBUSERNAME }}/${{ env.project }}:latest
