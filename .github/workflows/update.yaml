@@ -49,6 +49,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/arm64v8
+          platforms: arm64v8
           push: true
           tags: user/app:latest
