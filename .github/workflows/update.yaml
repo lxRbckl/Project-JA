@@ -39,6 +39,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
+        
             docker build -t ${{ env.DOCKERPROJECT }} .
 
             docker tag ${{ env.DOCKERPROJECT }} ${{ secrets.DOCKERHUBUSERNAME }}/${{ env.DOCKERPROJECT }}:latest
