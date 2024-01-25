@@ -13,6 +13,7 @@ jobs:
 
     env:
       DOCKERPROJECT: "project-ja"
+      architecture: "linux/arm64"
 
     steps:
       - name: Evaluate Commit Message
@@ -38,7 +39,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-            docker build -t ${{ env.DOCKERPROJECT }} .
+            docker build --platform ${{ env.architecture }} -t ${{ env.DOCKERPROJECT }} .
 
             docker tag ${{ env.DOCKERPROJECT }} ${{ secrets.DOCKERHUBUSERNAME }}/${{ env.DOCKERPROJECT }}:latest
             docker push ${{ secrets.DOCKERHUBUSERNAME }}/${{ env.DOCKERPROJECT }}:latest
