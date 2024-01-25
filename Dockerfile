@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:19.5.0-alpine
 
 
 # referencing kubernetes environment #
