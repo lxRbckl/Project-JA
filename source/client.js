@@ -83,7 +83,7 @@ class client {
 
       this.client.on('ready', async () => {
 
-         cron.schedule('0 0 * * *', async () => {
+         cron.schedule('0 0 * * 1', async () => {
 
             let response = await this.discussion.run();
             let channel = this.client.channels.cache.get(this.channelId);
