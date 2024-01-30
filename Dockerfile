@@ -2,8 +2,12 @@ FROM node:19.5.0
 
 
 # referencing kubernetes environment #
+ENV guildId ${guildId}
+ENV gptModel ${gptModel}
+ENV channelId ${channelId}
 ENV tokenopenai ${tokenopenai}
 ENV tokendiscord ${tokendiscord}
+ENV applicationId ${applicationId}
 
 
 WORKDIR /usr/app

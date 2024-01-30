@@ -22,9 +22,9 @@ class client {
       openaiToken,
       discordToken,
 
-      guildId = '974210528958369863',
-      channelId = '1061387142082863104',
-      applicationId = '970221184065081374'
+      guildId = process.env.guildId,
+      channelId = process.env.channelId,
+      applicationId = process.env.applicationId
 
    ) {
 

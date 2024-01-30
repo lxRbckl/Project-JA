@@ -8,7 +8,12 @@ class discussion {
 
    constructor(openaiToken) {
 
-      this.gpt = new gpt({token : openaiToken});
+      this.gpt = new gpt({
+         
+         token : openaiToken,
+         model : process.env.gptModel
+      
+      });
       this.query = 'Ask me a very interesting question.';
 
    }
