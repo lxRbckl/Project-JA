@@ -31,7 +31,7 @@ const token = {
 
 
 // export <
-module.exports = {token};
+module.exports = token;
 
 // >
 

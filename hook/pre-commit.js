@@ -1,5 +1,5 @@
 // import <
-const {token} = require('../index.js');
+const token = require('../index.js');
 
 // >
 
