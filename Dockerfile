@@ -1,10 +1,4 @@
-FROM ubuntu:22.04
-
-
-RUN apt-get update
-RUN apt-get install -y curl
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash
-RUN apt-get install -y nodejs
+FROM node:18.19.1
 
 
 # referencing kubernetes environment #
@@ -21,4 +15,4 @@ COPY ./ /usr/app
 RUN npm install
 
 
-CMD ["node", "--no-experimental-fetch", "index.js"]
+CMD ["node", "index.js"]
