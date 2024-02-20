@@ -1,14 +1,6 @@
 // < Project JA by Alex & Jordyn > //
 
 
-// // <
-// const { fetch, setGlobalDispatcher, Agent } = require('undici');
-// setGlobalDispatcher(new Agent({connect: { timeout: 60_000 }}));
-
-// // >
-
-
-
 // import <
 const {client} = require('./source/client.js');
 
