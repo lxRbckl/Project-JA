@@ -1,4 +1,4 @@
-FROM node:18.19.1
+FROM node:19.5.0
 
 
 # referencing kubernetes environment #
