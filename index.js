@@ -20,6 +20,11 @@ const token = {
 
 (async () => {
 
+   console.log('++++++++++++++')
+   console.log('openai', token.openai)
+   console.log('discord', token.discord)
+   console.log('====================')
+
    new client(
 
       openaiToken = token.openai,
