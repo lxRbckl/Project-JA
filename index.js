@@ -10,8 +10,8 @@ const {client} = require('./source/client.js');
 // objects <
 const token = {
 
-   openai : (process.env.tokenopenai).toString(),
-   discord : (process.env.tokendiscord).toString()
+   openai : process.env.tokenopenai,
+   discord : process.env.tokendiscord
 
 };
 
@@ -19,11 +19,6 @@ const token = {
 
 
 (async () => {
-
-   console.log('++++++++++++++')
-   console.log('openai', token.openai)
-   console.log('discord', token.discord)
-   console.log('====================')
 
    new client(
 
