@@ -1,7 +1,7 @@
 FROM node:19.5.0
 
 
-# referencing kubernetes environment #
+# referencing docker compose #
 ENV guildId ${guildId}
 ENV gptModel ${gptModel}
 ENV channelId ${channelId}
